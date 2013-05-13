@@ -66,7 +66,7 @@ function sendMessage(type, data, callback)
 
   packet.unshift(packet.length & 0xff);
 
-  console.log(new Buffer(packet).toString('hex'));
+  //console.log(new Buffer(packet).toString('hex'));
   device.write(packet);
   var response = [];
   var responseId = (response[2] << 8) + response[3];
@@ -148,8 +148,8 @@ function entropy(callback) {
 async.series([
   ping,
   deviceuuid,
-  formatwalletarea,
-  listwallets,
+  //formatwalletarea,
+  //listwallets,
   //loadwallet,
   entropy
 ], function (err) {
